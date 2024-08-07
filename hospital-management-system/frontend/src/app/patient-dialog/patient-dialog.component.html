@@ -1,0 +1,27 @@
+<div class="patient-dialog">
+  <h1 mat-dialog-title>{{ data.editing ? 'Edit Patient' : 'New Patient' }}</h1>
+  <div mat-dialog-content>
+    <form [formGroup]="patientForm">
+      <mat-form-field class="input-item">
+        <mat-label>Name</mat-label>
+        <input matInput formControlName="name">
+      </mat-form-field>
+      <mat-form-field class="input-item">
+        <mat-label>Disease</mat-label>
+        <input matInput formControlName="disease">
+      </mat-form-field>
+      <mat-form-field class="input-item">
+        <mat-label>Admission Type</mat-label>
+        <input matInput formControlName="admission">
+      </mat-form-field>
+      <mat-form-field class="input-item">
+        <mat-label>Medication</mat-label>
+        <input matInput formControlName="medication">
+      </mat-form-field>
+    </form>
+  </div>
+  <div mat-dialog-actions>
+    <button mat-button (click)="onCancel()">Cancel</button>
+    <button mat-raised-button (click)="onSubmit()">{{ data.editing ? 'Update' : 'Add' }}</button>
+  </div>
+</div>

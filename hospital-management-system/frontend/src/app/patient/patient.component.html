@@ -1,0 +1,45 @@
+<div class="patient-page">
+  <div class="content-container">
+    <h2>Patients
+      <button mat-raised-button color="basic" (click)="openDialog()" style="float: right;">Add Patient</button>
+    </h2>
+    <hr class="divider">
+
+    <table mat-table [dataSource]="patients" class="mat-elevation-z8">
+      <ng-container matColumnDef="name">
+        <th mat-header-cell *matHeaderCellDef> Name </th>
+        <td mat-cell *matCellDef="let patient"> {{patient.name}} </td>
+      </ng-container>
+
+      <ng-container matColumnDef="disease">
+        <th mat-header-cell *matHeaderCellDef> Disease </th>
+        <td mat-cell *matCellDef="let patient"> {{patient.disease}} </td>
+      </ng-container>
+
+      <ng-container matColumnDef="admission">
+        <th mat-header-cell *matHeaderCellDef> Admission Type </th>
+        <td mat-cell *matCellDef="let patient"> {{patient.admission}} </td>
+      </ng-container>
+
+      <ng-container matColumnDef="medication">
+        <th mat-header-cell *matHeaderCellDef> Medication </th>
+        <td mat-cell *matCellDef="let patient"> {{patient.medication}} </td>
+      </ng-container>
+
+      <ng-container matColumnDef="actions">
+        <th mat-header-cell *matHeaderCellDef></th>
+        <td mat-cell *matCellDef="let patient">
+          <button mat-button (click)="openDialog(patient)">
+            <mat-icon class="edit-button">edit</mat-icon>
+          </button>
+          <button mat-button (click)="deletePatient(patient._id)">
+            <mat-icon class="delete-button">delete</mat-icon>
+          </button>
+        </td>
+      </ng-container>
+
+      <tr mat-header-row *matHeaderRowDef="['name', 'disease', 'admission', 'medication', 'actions']"></tr>
+      <tr mat-row *matRowDef="let row; columns: ['name', 'disease', 'admission', 'medication', 'actions'];"></tr>
+    </table>
+  </div>
+</div>

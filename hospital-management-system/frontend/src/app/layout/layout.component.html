@@ -1,0 +1,27 @@
+<div class="flex">
+  <mat-sidenav-container class="sidenav-container">
+    <mat-sidenav mode="side" opened class="sidenav">
+      <mat-nav-list>
+        <a mat-list-item routerLink="/home" class="nav-item">
+          <mat-icon>home</mat-icon>
+          <span class="nav-text">Home</span>
+        </a>
+        <a mat-list-item routerLink="/doctor" class="nav-item">
+          <mat-icon>person</mat-icon>
+          <span class="nav-text">Doctor</span>
+        </a>
+        <a mat-list-item routerLink="/nurse" class="nav-item">
+          <mat-icon>medical_services</mat-icon>
+          <span class="nav-text">Nurse</span>
+        </a>
+        <a mat-list-item routerLink="/patient" class="nav-item">
+          <mat-icon>sick</mat-icon>
+          <span class="nav-text">Patient</span>
+        </a>
+      </mat-nav-list>
+    </mat-sidenav>
+    <mat-sidenav-content class="main-content">
+      <router-outlet></router-outlet>
+    </mat-sidenav-content>
+  </mat-sidenav-container>
+</div>
